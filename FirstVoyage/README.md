@@ -1,0 +1,2 @@
+# FirstVoyage
+### a Sails application
