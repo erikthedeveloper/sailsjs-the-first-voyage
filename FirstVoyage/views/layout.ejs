@@ -6,7 +6,7 @@
         your `sails.config.appName` to show that you can inject data into layouts
         exactly the same way as with your other view templates.
     -->
-    <title><%- title %></title>
+    <title>SailsCall - A Realtime Chat Application Built on node.js with SailsJS</title>
 
     <!-- Viewport mobile tag for sensible mobile support -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
@@ -18,7 +18,7 @@
 
       You can link any CSS, LESS, or image files in your `assets` directory
       as you would normally: using <link/> tags.
-      
+
     -->
 
     <!--
@@ -30,15 +30,33 @@
       located in the top-level of this Sails app.  If you run into issues with styles
       not reloading, check the Sails log output in your console for LESS compilation errors.
       If necessary, shut down and then lift your app again.
-      
+
     -->
+
+  <!-- <link rel="stylesheet" href="http://bootswatch.com/cosmo/bootstrap.min.css"> -->
+  <!--STYLES-->
+  <link rel="stylesheet" href="/linker/css/bootstrap.min.css">
+  <!--STYLES END-->
+
 
   </head>
 
-  <body>
+  <body style="padding-top: 57px;">
+
+    <!-- Header/Nav -->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="
+        box-shadow: 0px 2px 1px rgba(0,0,0,0.2);">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">SailsCall</a>
+            </div>
+        </div>
+    </nav>
 
     <!-- Include the view file for the current controller/route -->
-    <%- body %>
+    <div class="container">
+      <%- body %>
+    </div>
 
 
     <!--
@@ -46,7 +64,7 @@
       Client-side Javascript
       ========================
 
-      You can import any js files in your `assets` directory as you would 
+      You can import any js files in your `assets` directory as you would
       normally: using <script></script> tags.
 
       Here's an example of importing a few dependencies, in order:
@@ -58,9 +76,10 @@
     <!-- listen on socket.io for incoming messages -->
     <script type="text/javascript" src="/js/app.js"></script>
 
-    <!-- Your scripts here? -->
-    <!-- Your scripts here? -->
-    <!-- Your scripts here? -->
+    <!--SCRIPTS-->
+    <script src="/linker/js/jquery-2.1.0.min.js"></script>
+    <script src="/linker/js/main.js"></script>
+    <!--SCRIPTS END-->
 
 
     <!--
@@ -82,7 +101,7 @@
       Another way: The Asset Linker
       ========================
 
-      Sails supports a Grunt-based asset linker, to automatically inject 
+      Sails supports a Grunt-based asset linker, to automatically inject
       <link> and <script> tags, as well any client-side templates you're using
       into your HTML layouts and views, respecting dependencies.
 

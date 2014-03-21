@@ -1,0 +1,46 @@
+<!-- Title -->
+
+<!-- View Messages -->
+<div class="row">
+    <div class="col-md-10 col-md-offset-1">
+        <h1 class="lead"><%= chatroom.title %> <small><strong><%= chatroom.slug %></strong></small></h1>
+
+        <ul class="list-group" id="messages_container"></ul>
+
+    </div>
+</div>
+
+<!-- Type Message Here - Fixed to Bottom -->
+<div style="
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 25px 0;
+    background: #fff;">
+    <div class="container">
+        <div class="row">
+            <form id="status_update_form" name="status_update_form">
+
+                <div class="col-md-10">
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <input type="text" name="username" rows="2" class="form-control" value="John Doe" placeholder="Username">
+                        </div>
+                        <div class="col-md-8">
+                            <input type="text" name="content" rows="2" class="form-control" value=" " placeholder="Message...">
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="col-md-2">
+                    <button class="btn-lg btn-block btn-primary">Send</button>
+                    <input type="hidden" name="chatroom_id" value="<%= chatroom.id %>">
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
