@@ -36,7 +36,9 @@ module.exports.routes = {
     view: 'home/index'
   },
 
-  '/converse/:chat_slug': {
+  'post /redirect': 'ChatRoomController.redirect',
+
+  '/chat/:chat_slug': {
     controller: 'ChatRoomController',
     action: 'render'
   }

@@ -25,7 +25,7 @@ module.exports = {
 
         if (!chatroom)
         {
-            res.json('Chatroom not found');
+            res.redirect('/');
         }
         else
         {
@@ -34,6 +34,12 @@ module.exports = {
             });
         }
         });
+    },
+
+    redirect: function(req, res)
+    {
+      the_url = '/chat/'+req.param('slug');
+      res.redirect( the_url );
     },
 
 
