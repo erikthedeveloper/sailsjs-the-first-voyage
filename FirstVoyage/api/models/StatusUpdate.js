@@ -1,5 +1,5 @@
 /**
- * ChatRoom
+ * StatusUpdate
  *
  * @module      :: Model
  * @description :: A short summary of how this model works and what it represents.
@@ -10,15 +10,19 @@ module.exports = {
 
   attributes: {
 
-    title : {
+    chatroom_id: {
+        type: 'integer',
+        required: true
+    },
+
+    username: {
         type: 'string',
         required: true
     },
-    slug  : {
+
+    content: {
         type: 'string',
-        required: true,
-        unique: true,
-        regex: '^[a-z-]+'
+        required: true
     }
 
   }

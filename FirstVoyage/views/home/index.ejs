@@ -1,12 +1,15 @@
 
 
-<div class="row" style="padding-top: 150px">
-    <div class="col-sm-6 col-sm-offset-3 jumbotron">
+<div class="row" style="padding-top: 100px">
+    <div class="col-md-6 col-md-offset-3 jumbotron">
         <h1 class="lead text-center">SailsCall</h1>
         <h2 class="lead text-center"><small>A Realtime Chat Client with <strong>SailsJS</strong></small></h2>
-        <form action="/redirect" method="POST">
-            <input type="text" name="slug" class="form-control input-lg" placeholder='Enter "chat-room-slug"...'/>
-            <input type="submit" class="sr-only">
+
+        <form action="/redirect" method="POST" class="form form-horizontal">
+            <input type="text" name="slug" class="form-control input-lg" value="default-chat-room" placeholder='Enter Slug (i.e. "chat-room-slug")'/>
+            <input type="text" name="title" class="form-control input-lg" value="Default Chat Room" placeholder='Name it'/>
+            <button class="btn btn-lg btn-block btn-warning">Go</button>
         </form>
+
     </div>
 </div>

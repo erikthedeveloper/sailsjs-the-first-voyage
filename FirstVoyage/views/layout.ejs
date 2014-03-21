@@ -6,7 +6,7 @@
         your `sails.config.appName` to show that you can inject data into layouts
         exactly the same way as with your other view templates.
     -->
-    <title><%- title %></title>
+    <title>SailsCall - A Realtime Chat Application Built on node.js with SailsJS</title>
 
     <!-- Viewport mobile tag for sensible mobile support -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
@@ -33,22 +33,24 @@
 
     -->
 
-  <link rel="stylesheet" href="http://bootswatch.com/readable/bootstrap.min.css">
+  <!-- <link rel="stylesheet" href="http://bootswatch.com/cosmo/bootstrap.min.css"> -->
+  <!--STYLES-->
+  <link rel="stylesheet" href="/linker/css/bootstrap.min.css">
+  <!--STYLES END-->
+
 
   </head>
 
   <body style="padding-top: 57px;">
 
     <!-- Header/Nav -->
-    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-      <div class="container">
-        <a class="navbar-brand" href="/">SailsCall</a>
-        <ul class="nav navbar-nav">
-          <li class="active">
-            <a>Chat</a>
-          </li>
-        </ul>
-      </div>
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="
+        box-shadow: 0px 2px 1px rgba(0,0,0,0.2);">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">SailsCall</a>
+            </div>
+        </div>
     </nav>
 
     <!-- Include the view file for the current controller/route -->
@@ -74,9 +76,10 @@
     <!-- listen on socket.io for incoming messages -->
     <script type="text/javascript" src="/js/app.js"></script>
 
-    <!-- Your scripts here? -->
-    <!-- Your scripts here? -->
-    <!-- Your scripts here? -->
+    <!--SCRIPTS-->
+    <script src="/linker/js/jquery-2.1.0.min.js"></script>
+    <script src="/linker/js/main.js"></script>
+    <!--SCRIPTS END-->
 
 
     <!--

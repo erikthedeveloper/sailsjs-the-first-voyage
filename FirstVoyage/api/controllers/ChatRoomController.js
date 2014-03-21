@@ -19,27 +19,58 @@ module.exports = {
 
     render: function(req, res)
     {
+
+        // Get all of the users
+        StatusUpdate.find().exec(function (err, statuses) {
+          // Subscribe the requesting socket (e.g. req.socket) to all users (e.g. users)
+          StatusUpdate.subscribe(req.socket, statuses);
+        });
+
         ChatRoom.findOneBySlug( req.params['chat_slug'], function (err, chatroom) {
 
-        if (err) res.view('home/index');
-
-        if (!chatroom)
-        {
-            res.redirect('/');
-        }
-        else
-        {
-            res.view('home/chat', {
-                chatroom: chatroom
-            });
-        }
+          if (!chatroom || err)
+          {
+              res.redirect('/');
+          }
+          else
+          {
+              res.view('home/chat', {
+                  chatroom: chatroom
+              });
+          }
         });
     },
 
     redirect: function(req, res)
     {
-      the_url = '/chat/'+req.param('slug');
-      res.redirect( the_url );
+      /**
+       * TODO Error Handling.....
+       */
+      ChatRoom.findOneBySlug( req.param('slug'), function (err, chatroom) {
+
+        if (err) {
+          res.redirect( '/' );
+        }
+
+        if (!chatroom)
+        {
+            ChatRoom.create( {
+              slug:req.param('slug'),
+              title: req.param('title')
+            }).done( function (err, chatroom)
+            {
+              the_url = '/chat/' + chatroom.slug;
+              res.redirect( the_url );
+            });
+        }
+        else
+        {
+          the_url = '/chat/' + chatroom.slug;
+          res.redirect( the_url );
+        }
+
+
+      });
     },
 
 
