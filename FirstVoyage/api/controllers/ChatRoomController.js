@@ -20,13 +20,15 @@ module.exports = {
     render: function(req, res)
     {
 
-        // Get all of the users
-        StatusUpdate.find().exec(function (err, statuses) {
-          // Subscribe the requesting socket (e.g. req.socket) to all users (e.g. users)
-          StatusUpdate.subscribe(req.socket, statuses);
-        });
 
         ChatRoom.findOneBySlug( req.params['chat_slug'], function (err, chatroom) {
+
+          // Get all of the users
+          StatusUpdate.find({'chatroom_id' : chatroom.id})
+            .exec(function (err, statuses) {
+            // Subscribe the requesting socket (e.g. req.socket) to all users (e.g. users)
+            StatusUpdate.subscribe(req.socket, statuses);
+          });
 
           if (!chatroom || err)
           {
