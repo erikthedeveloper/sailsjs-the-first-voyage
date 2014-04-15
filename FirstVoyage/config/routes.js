@@ -32,12 +32,22 @@ module.exports.routes = {
   // located at `views/home/index.ejs`
   //
   // (This would also work if you had a file at: `/views/home.ejs`)
+
+  /**
+   * Load up homepage
+   */
   '/': {
     view: 'home/index'
   },
 
+  /**
+   * Handle either the creation or redirection to existing chatrooms based on the giving "slug" <-> Chatroom.slug
+   */
   'post /redirect': 'ChatRoomController.redirect',
 
+  /**
+   * Load up an individual Chatroom
+   */
   '/chat/:chat_slug': {
     controller: 'ChatRoomController',
     action: 'render'

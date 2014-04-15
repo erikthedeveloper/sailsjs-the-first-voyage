@@ -17,10 +17,11 @@
 
 module.exports = {
 
+    /**
+     * Load an individual chatroom using Chatroom.slug OR redirect to home on error
+     */
     render: function(req, res)
     {
-
-
         ChatRoom.findOneBySlug( req.params['chat_slug'], function (err, chatroom) {
 
           // Get all of the users

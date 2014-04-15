@@ -7,6 +7,15 @@
             <h2 class="lead text-center"><small>A Realtime Chat Client with <strong>SailsJS</strong></small></h2>
 
             <form action="/redirect" method="POST" class="form form-horizontal">
+                <!--
+                    POST to /redirect (ChatRoomController.redirect)
+                        Will either
+                            Create a new chatroom
+                            Load existing chatroom
+                            On Error: Redirect back to /
+
+                    TODO - Client Side Validation
+                -->
                 <input type="text" name="slug" class="form-control input-lg" value="default-chat-room" placeholder='Enter Slug (i.e. "chat-room-slug")'/>
                 <input type="text" name="title" class="form-control input-lg" value="Default Chat Room" placeholder='Name it'/>
                 <button class="btn btn-lg btn-block btn-warning">Go</button>

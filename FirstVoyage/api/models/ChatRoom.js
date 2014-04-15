@@ -8,12 +8,20 @@
 
 module.exports = {
 
+  // TODO - Validation
   attributes: {
 
+    /**
+     * (i.e. My Chat Room)
+     */
     title : {
         type: 'string',
         required: true
     },
+
+    /**
+     * (i.e. "my-chat-room")
+     */
     slug  : {
         type: 'string',
         required: true,
