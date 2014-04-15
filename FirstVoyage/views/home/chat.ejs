@@ -5,6 +5,23 @@
     <div class="col-md-10 col-md-offset-1">
         <h1 class="lead"><%= chatroom.title %> <small><strong><%= chatroom.slug %></strong></small></h1>
 
+        <!--
+            Populated via jQuery (assets/linker/js/main.js)
+                TODO - Convert to AngularJS
+
+                Currently:
+                    var renderMessage = function (msg) {
+                        // var time = moment(msg.createdAt).format('YYYY-MM-DD HH:mm');
+                        messages_container.prepend(
+                            '<li class="list-group-item">' +
+                                '<h5>' + msg.username + '</h5>' +
+                                '<p>' + msg.content  + '</p>' +
+                            '</li>'
+                            );
+                    };
+
+                Display all of this Chatroom's StatusUpdates
+        -->
         <ul class="list-group" id="messages_container"></ul>
 
     </div>
@@ -21,7 +38,12 @@
     <div class="container">
         <div class="row">
             <form id="status_update_form" name="status_update_form">
+                <!--
+                    POST via jQuery (assets/linker/js/main.js)
+                        TODO - Convert to AngularJS
 
+                        Create new StatusUpdate
+                -->
                 <div class="col-md-10">
 
                     <div class="row">

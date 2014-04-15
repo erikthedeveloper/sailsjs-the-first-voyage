@@ -8,8 +8,12 @@
 
 module.exports = {
 
+  // TODO - Validation
   attributes: {
 
+    /**
+     * Pseudo belongs_to relationship. Associations not yet available for SailsJS
+     */
     chatroom_id: {
         type: 'integer',
         required: true
@@ -20,6 +24,10 @@ module.exports = {
         required: true
     },
 
+    /**
+     * TODO validate
+     *     Escape all data (i.e. no img, js, etc...)
+     */
     content: {
         type: 'string',
         required: true
