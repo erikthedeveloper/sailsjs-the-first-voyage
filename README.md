@@ -2,7 +2,7 @@ Let me begin by saying that up until now I have *experimented lightly* with **no
 
 This project is the result of my first two days with **SailsJS**.
 
-**A little background on me:** I have been heavily focused on MVC/PHP/Laravel 4 development for the past 8 months or so (and **more** than happy with the experience) had my eye on spending some time with node.js for some time now and have 
+**A little background on me:** I have been primarily focused on MVC/PHP/Laravel 4+ development for the past year or so (and **more** than happy with the experience) had my eye on spending some time with node.js for some time now and have 
 
 I've seen SailsJS pop up more and more in conversations recently, so when I was tasked with creating a web development tutorial I thought, "Why not?!".
 
